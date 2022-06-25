@@ -1,8 +1,9 @@
 <template lang="pug">
+//- .container 
 .container(v-if="isVisible")
   q-card.card-style.col-xs-12
     q-parallax(:height="155" src="../../assets/background-article.jpg")
-      .column.absolute-top.custom-caption.q-mb-lg
+      .column.absolute-top.custom-caption.justify-center
         span.text-white.text-bold.to-mobile {{ title }}
         .language-container
           template(v-for="(key, index) in countTechs" :key="key")
@@ -78,17 +79,17 @@ export default defineComponent({
 .text-subtitle1 {
   position: absolute;
   right: 5px;
-  bottom: 15px;
+  bottom: 5px;
 }
 
 .to-mobile {
-  font-size: 1.9rem;
+  font-size: 1.6rem;
+  padding-bottom: 10px;
 }
 
 .custom-caption {
   text-align: center;
-  padding: 10px;
-  top: 10%;
+  height: 100%;
   background-color: #0b0b2999;
 }
 
@@ -106,20 +107,14 @@ export default defineComponent({
   color: #ccc;
 }
 
-@media only screen and (min-width: 1490px) {
+@media only screen and (min-width: 1690px) {
+  .to-mobile {
+    font-size: 1.7rem;
+  }
+
   .card-style {
     height: 195px;
     width: 675px;
-  }
-
-  .image-language {
-    width: 58px;
-    height: 58px;
-  }
-
-  .custom-caption {
-    padding: 5px;
-    top: 10%;
   }
 }
 
@@ -139,18 +134,19 @@ export default defineComponent({
   }
 
   .language-container {
-    // display: none;
     position: absolute;
     bottom: 5px;
     right: 5px;
   }
 
   .to-mobile {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
+    position: absolute;
+    padding: 5px 10px 5px 10px;
+    top: 0;
   }
 
   .subtitle {
-    margin-top: 5px;
     line-height: 20px;
     font-size: 15px;
   }
@@ -163,7 +159,7 @@ export default defineComponent({
   .text-subtitle1 {
     position: relative;
     display: flex;
-    bottom: -32%;
+    bottom: -30%;
   }
 }
 </style>

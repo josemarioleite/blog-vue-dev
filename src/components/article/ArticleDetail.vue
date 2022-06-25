@@ -27,7 +27,6 @@ export default defineComponent({
       idArticle: '',
       notion_id: '',
       blockMap: '',
-      isLoading: false,
       article: new ArticlePut()
     }
   },

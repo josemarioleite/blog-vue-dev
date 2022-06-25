@@ -64,7 +64,7 @@ export default defineComponent({
     }
   },
   methods: {
-    ...mapMutations(['changeStateMainActived', 'changeStateMainSelected']),
+    ...mapMutations(['changeStateMainActived', 'changeStateMainSelected', 'showMain']),
     async getArticles () {
       await this.$store.dispatch('getArticles', this.pagination)
     },
@@ -96,6 +96,7 @@ export default defineComponent({
   },
   async created () {
     await this.getArticles()
+    await this.showMain()
     await this.$store.dispatch('isLogin')
   }
 })
